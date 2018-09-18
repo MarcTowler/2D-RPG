@@ -1,0 +1,38 @@
+﻿# Tiled2Unity generated file. Do not modify by hand.
+# Wavefront file for 'Transition-Forest_mesh_0003.obj'
+
+# Vertices (Count = 12)
+v -176 -144 0
+v -192 -144 0
+v -192 -128 0
+v -176 -128 0
+v -128 -144 0
+v -144 -144 0
+v -144 -128 0
+v -128 -128 0
+v -176 -192 0
+v -192 -192 0
+v -192 -176 0
+v -176 -176 0
+
+# Texture cooridinates (Count = 8)
+vt 0.3688017 0.9695817
+vt 0.3853306 0.9695817
+vt 0.3853306 1
+vt 0.3688017 1
+vt 0.3336777 0.9695817
+vt 0.3502066 0.9695817
+vt 0.3502066 1
+vt 0.3336777 1
+
+# Normal
+vn 0 0 -1
+
+# Mesh description
+g Transition-Forest_mesh_0003
+
+# Faces
+f 1/1/1 2/2/1 3/3/1 4/4/1
+f 5/5/1 6/6/1 7/7/1 8/8/1
+f 9/5/1 10/6/1 11/7/1 12/8/1
+

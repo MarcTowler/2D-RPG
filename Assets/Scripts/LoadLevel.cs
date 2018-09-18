@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour {
+public class LoadLevel : MonoBehaviour {
 
     [SerializeField] string newGameScene;
 
@@ -25,5 +25,13 @@ public class MainMenu : MonoBehaviour {
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.name == "Player")
+        {
+            SceneManager.LoadScene(newGameScene);
+        }
     }
 }
