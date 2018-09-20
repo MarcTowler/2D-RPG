@@ -6,10 +6,13 @@ using UnityEngine.SceneManagement;
 public class LoadLevel : MonoBehaviour {
 
     [SerializeField] string newGameScene;
+    [SerializeField] string exitPoint;
+
+    private PlayerController thePlayer;
 
 	// Use this for initialization
 	void Start () {
-		
+        thePlayer = FindObjectOfType<PlayerController>();
 	}
 	
 	// Update is called once per frame
@@ -32,6 +35,8 @@ public class LoadLevel : MonoBehaviour {
         if(other.gameObject.name == "Player")
         {
             SceneManager.LoadScene(newGameScene);
+
+            thePlayer.startPoint = exitPoint;
         }
     }
 }
