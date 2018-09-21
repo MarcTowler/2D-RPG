@@ -84,6 +84,9 @@
    <property name="unity:sortingLayerName" value="WorldObjects"/>
   </properties>
   <layer name="trees" width="20" height="20">
+   <properties>
+    <property name="unity:sortingLayerName" value="WorldObjects"/>
+   </properties>
    <data encoding="csv">
 589,589,589,589,589,589,589,589,589,0,0,589,589,589,589,589,589,589,589,589,
 646,646,646,646,646,646,646,646,646,0,0,646,646,646,646,646,646,646,646,646,
@@ -108,6 +111,9 @@
 </data>
   </layer>
   <layer name="trees 2" width="20" height="20">
+   <properties>
+    <property name="unity:sortingLayerName" value="WorldObjects"/>
+   </properties>
    <data encoding="csv">
 589,589,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 589,589,589,589,589,589,589,589,589,0,0,589,589,589,589,589,589,589,589,589,
@@ -132,6 +138,9 @@
 </data>
   </layer>
   <layer name="trees 3" width="20" height="20">
+   <properties>
+    <property name="unity:sortingLayerName" value="WorldObjects"/>
+   </properties>
    <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -156,6 +165,9 @@
 </data>
   </layer>
   <layer name="trees 4" width="20" height="20">
+   <properties>
+    <property name="unity:sortingLayerName" value="WorldObjects"/>
+   </properties>
    <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -180,6 +192,9 @@
 </data>
   </layer>
   <layer name="trees 5" width="20" height="20">
+   <properties>
+    <property name="unity:sortingLayerName" value="WorldObjects"/>
+   </properties>
    <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -204,6 +219,9 @@
 </data>
   </layer>
   <layer name="trees 6" width="20" height="20">
+   <properties>
+    <property name="unity:sortingLayerName" value="WorldObjects"/>
+   </properties>
    <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -228,6 +246,9 @@
 </data>
   </layer>
   <layer name="trees 7" width="20" height="20">
+   <properties>
+    <property name="unity:sortingLayerName" value="WorldObjects"/>
+   </properties>
    <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -252,6 +273,9 @@
 </data>
   </layer>
   <layer name="trees 8" width="20" height="20">
+   <properties>
+    <property name="unity:sortingLayerName" value="WorldObjects"/>
+   </properties>
    <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -276,6 +300,9 @@
 </data>
   </layer>
   <layer name="trees 9" width="20" height="20">
+   <properties>
+    <property name="unity:sortingLayerName" value="WorldObjects"/>
+   </properties>
    <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -300,6 +327,9 @@
 </data>
   </layer>
   <layer name="trees 10" width="20" height="20">
+   <properties>
+    <property name="unity:sortingLayerName" value="WorldObjects"/>
+   </properties>
    <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -324,6 +354,9 @@
 </data>
   </layer>
   <layer name="trees 11" width="20" height="20">
+   <properties>
+    <property name="unity:sortingLayerName" value="WorldObjects"/>
+   </properties>
    <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,

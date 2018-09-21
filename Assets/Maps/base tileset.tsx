@@ -140,6 +140,13 @@
    <object id="1" x="0.181818" y="0.181818" width="15.6364" height="15.7273"/>
   </objectgroup>
  </tile>
+ <tile id="645">
+  <objectgroup draworder="index">
+   <object id="1" x="10.9091" y="15.6364">
+    <polygon points="0,0 -2.72727,-3.81818 -6,0"/>
+   </object>
+  </objectgroup>
+ </tile>
  <tile id="650">
   <objectgroup draworder="index">
    <object id="1" x="0.0909091" y="0" width="16" height="15.9091"/>
