@@ -26,10 +26,10 @@ public class HurtEnemy : MonoBehaviour {
         {
             currentDamage = damageToGive + stats.currentAttack;
 
-            collision.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(currentDamage);
+            //collision.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(currentDamage);
             Instantiate(damageBurst, hitPoint.position, hitPoint.rotation);
             GameObject clone = Instantiate(damageNumber, hitPoint.position, Quaternion.Euler(Vector3.zero));
-            clone.GetComponent<FloatingNumbers>().damageNumber = currentDamage;
+            //clone.GetComponent<FloatingNumbers>().damageNumber = currentDamage;
         }
     }
 }
