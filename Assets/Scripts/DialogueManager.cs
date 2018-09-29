@@ -10,6 +10,10 @@ public class DialogueManager : MonoBehaviour {
 
     public bool active;
 
+	//Add ability to store multi-line dialogue
+	public string[] dialogueLines;
+	public int currentLine;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -19,9 +23,16 @@ public class DialogueManager : MonoBehaviour {
 	void Update () {
 		if(active && Input.GetKeyDown(KeyCode.Space))
         {
-            dialogueBox.SetActive(false);
-            active = false;
+			currentLine++;
         }
+
+		if (currentLine >= dialogueLines.Length) {
+			dialogueBox.SetActive(false);
+            active = false;
+			currentLine = 0;
+		}
+
+		text.text = dialogueLines [currentLine];
 	}
 
     public void ShowBox(string dialogue)
@@ -30,4 +41,10 @@ public class DialogueManager : MonoBehaviour {
         dialogueBox.SetActive(true);
         text.text = dialogue;
     }
+
+	public void ShowDialogue()
+	{
+		active = true;
+		dialogueBox.SetActive (true);
+	}
 }
