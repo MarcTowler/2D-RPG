@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
     [SerializeField] float moveSpeed;
+	private float currentMoveSpeed;
+	public float diagonalMoveModifier;
 
     private Animator anim;
     private bool playerMoving;
@@ -12,6 +14,10 @@ public class PlayerController : MonoBehaviour {
     private Rigidbody2D rb;
     private static bool PlayerExists;
     public string startPoint;
+
+	private float attackTimeCounter;
+	public float attackTime;
+	private bool attacking;
 
 	// Use this for initialization
 	void Start () {
@@ -32,33 +38,49 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
         playerMoving = false;
 
-		if(Input.GetAxisRaw("Horizontal") > 0.5f || Input.GetAxisRaw("Horizontal") < -0.5f)
-        {
-            //transform.Translate(new Vector3(Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime, 0f, 0f));
-            rb.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * moveSpeed, rb.velocity.y);
-            playerMoving = true;
+		if (!attacking) {
+			if (Input.GetAxisRaw ("Horizontal") > 0.5f || Input.GetAxisRaw ("Horizontal") < -0.5f) {
+				//transform.Translate(new Vector3(Input.GetAxisRaw("Horizontal") * moveSpeed * Time.deltaTime, 0f, 0f));
+				rb.velocity = new Vector2 (Input.GetAxisRaw ("Horizontal") * currentMoveSpeed, rb.velocity.y);
+				playerMoving = true;
 
-            lastMove = new Vector2(Input.GetAxisRaw("Horizontal"), 0f);
-        }
+				lastMove = new Vector2 (Input.GetAxisRaw ("Horizontal"), 0f);
+			}
 
-        if (Input.GetAxisRaw("Vertical") > 0.5f || Input.GetAxisRaw("Vertical") < -0.5f)
-        {
-            //transform.Translate(new Vector3(0f, Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime, 0f));
-            rb.velocity = new Vector2(rb.velocity.x, Input.GetAxisRaw("Vertical") * moveSpeed);
-            playerMoving = true;
+			if (Input.GetAxisRaw ("Vertical") > 0.5f || Input.GetAxisRaw ("Vertical") < -0.5f) {
+				//transform.Translate(new Vector3(0f, Input.GetAxisRaw("Vertical") * moveSpeed * Time.deltaTime, 0f));
+				rb.velocity = new Vector2 (rb.velocity.x, Input.GetAxisRaw ("Vertical") * currentMoveSpeed);
+				playerMoving = true;
 
-            lastMove = new Vector2(0f, Input.GetAxisRaw("Vertical"));
-        }
+				lastMove = new Vector2 (0f, Input.GetAxisRaw ("Vertical"));
+			}
 
-        if(Input.GetAxisRaw("Horizontal") < 0.5f && Input.GetAxisRaw("Horizontal") > -0.5f)
-        {
-            rb.velocity = new Vector2(0f, rb.velocity.y);
-        }
+			if (Input.GetAxisRaw ("Horizontal") < 0.5f && Input.GetAxisRaw ("Horizontal") > -0.5f) {
+				rb.velocity = new Vector2 (0f, rb.velocity.y);
+			}
 
-        if (Input.GetAxisRaw("Vertical") < 0.5f && Input.GetAxisRaw("Vertical") > -0.5f)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, 0f);
-        }
+			if (Input.GetAxisRaw ("Vertical") < 0.5f && Input.GetAxisRaw ("Vertical") > -0.5f) {
+				rb.velocity = new Vector2 (rb.velocity.x, 0f);
+			}
+
+			//Attack!!!!
+			if (Input.GetKeyDown (KeyCode.J)) {
+				attackTimeCounter = attackTime;
+				attacking = true;
+				rb.velocity = Vector2.zero;
+				anim.SetBool ("Attack", true);
+			}
+
+			if (Mathf.Abs (Input.GetAxisRaw ("Horizontal")) > 0.5f && Mathf.Abs (Input.GetAxisRaw ("Vertical")) > 0.5f) {
+				currentMoveSpeed = moveSpeed * diagonalMoveModifier;
+			} else {
+				currentMoveSpeed = moveSpeed;
+			}
+		}
+
+		if (attackTimeCounter > 0) {
+			attackTimeCounter -= Time.deltaTime;
+		}
 
         anim.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
         anim.SetFloat("MoveY", Input.GetAxisRaw("Vertical"));

@@ -32,7 +32,7 @@ public class HurtPlayer : MonoBehaviour {
 
             collision.gameObject.GetComponent<PlayerHealthManager>().HurtPlayer(currentDamage);
             GameObject clone = Instantiate(damageNumber, collision.transform.position, Quaternion.Euler(Vector3.zero));
-            //clone.GetComponent<FloatingNumbers>().damageNumber = currentDamage;
+            clone.GetComponent<FloatingNumbers>().damageNumber = currentDamage;
         }
     }
 }

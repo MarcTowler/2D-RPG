@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HurtEnemy : MonoBehaviour {
-
-    [SerializeField] int damageToGive;
+	//
+    public int damageToGive;
     public GameObject damageBurst;
     public Transform hitPoint;
     public GameObject damageNumber;
     private int currentDamage;
     private PlayerStats stats;
+
 	// Use this for initialization
 	void Start () {
         stats = FindObjectOfType<PlayerStats>();
@@ -20,16 +21,16 @@ public class HurtEnemy : MonoBehaviour {
 		
 	}
 
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        if(collision.gameObject.tag == "Enemy")
+        if(other.gameObject.tag == "Enemy")
         {
             currentDamage = damageToGive + stats.currentAttack;
 
-            //collision.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(currentDamage);
+            other.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(currentDamage);
             Instantiate(damageBurst, hitPoint.position, hitPoint.rotation);
             GameObject clone = Instantiate(damageNumber, hitPoint.position, Quaternion.Euler(Vector3.zero));
-            //clone.GetComponent<FloatingNumbers>().damageNumber = currentDamage;
+            clone.GetComponent<FloatingNumbers>().damageNumber = currentDamage;
         }
     }
 }
